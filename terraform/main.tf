@@ -14,8 +14,8 @@ resource "aws_instance" "example" {
 
   provisioner "local-exec" {
     command = <<EOT
-      echo "[${count.index == 0 ? "dan_sych" : "dan_sych2"}]" >> ../inventory
-      echo "${self.public_ip}" >> ../inventory
+      echo "[${count.index == 0 ? "dan_sych" : "dan_sych2"}]" >> ../ansible/inventory
+      echo "${self.public_ip}" >> ../ansible/inventory
     EOT
   }
 }
